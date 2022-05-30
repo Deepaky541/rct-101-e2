@@ -6,7 +6,6 @@ import axios from "axios";
 import { useEffect } from "react";
 import { Flex } from "@chakra-ui/react";
 import Pagination from "./Pagination"
-import { Grid,Box } from "@chakra-ui/react";
 
 
 const Products = () => {

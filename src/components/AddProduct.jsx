@@ -4,7 +4,7 @@ import { Button } from "@chakra-ui/react";
 import {Modal, ModalBody,} from "@chakra-ui/react";
 import { Input } from "@chakra-ui/react";
 import { Select } from "@chakra-ui/react";
-import { Radio, RadioGroup,Flex } from "@chakra-ui/react";
+import { Radio, RadioGroup } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 
 const AddProduct = ({onSubmit}) => {
