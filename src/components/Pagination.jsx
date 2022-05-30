@@ -8,16 +8,16 @@ const Pagination = ({ totalcount, oncall, onlimitt }) => {
     const [limit, setlimit] = useState(3);
 
     const prev = () => {
-      if (page > 1) {
+     
         setpage(page - 1);
         oncall(page);
-      }
+      
     };
     const next = () => {
-      if (totalcount < page * limit) {
+      
         setpage(page + 1);
         oncall(page);
-      }
+      
     };
     const firstpage = () => {
       setpage(1);
