@@ -4,10 +4,11 @@ import { Button } from "@chakra-ui/react";
 import {Modal, ModalBody,} from "@chakra-ui/react";
 import { Input } from "@chakra-ui/react";
 import { Select } from "@chakra-ui/react";
-import { Radio, RadioGroup } from "@chakra-ui/react";
+import { Radio, RadioGroup,Flex } from "@chakra-ui/react";
+import { useDisclosure } from "@chakra-ui/react";
 
 const AddProduct = ({onSubmit}) => {
-  // TODO: Remove below const and instead import them from chakra
+  
    const [form, setform] = useState({});
 
    const handleChange = (e) => {
@@ -19,11 +20,14 @@ const AddProduct = ({onSubmit}) => {
      e.preventDefault();
      onSubmit(form);
    };
+   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <Button my={4} data-cy="add-product-button">x</Button>
-      <Modal >
+      <Button my={4} onClick={onOpen} data-cy="add-product-button">
+        Add product
+      </Button>
+      <Modal isOpen={isOpen} onClose={onClose}>
         <ModalBody pb={6}>
           <Input
             data-cy="add-product-title"
@@ -74,7 +78,9 @@ const AddProduct = ({onSubmit}) => {
             name="price"
             onChange={handleChange}
           />
-          <Button data-cy="add-product-submit-button" onclick={handleSubmit} >submit</Button>
+          <Button data-cy="add-product-submit-button" onclick={handleSubmit}>
+            submit
+          </Button>
         </ModalBody>
       </Modal>
     </>

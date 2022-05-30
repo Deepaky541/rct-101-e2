@@ -6,7 +6,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { Flex } from "@chakra-ui/react";
 import Pagination from "./Pagination"
-import { Grid } from "@chakra-ui/react";
+import { Grid,Box } from "@chakra-ui/react";
 
 
 const Products = () => {
@@ -59,13 +59,13 @@ const Products = () => {
   return (
     <Flex>
       
-      <AddProduct onSubmit={addData} />
-
-      <Grid>
+      <AddProduct onSubmit={addData} ></AddProduct>
+    
+      <Flex margin='500px' >
         {formData.map((todo) => (
           <Product key={todo.id} info={todo} />
         ))}
-      </Grid>
+      </Flex>
 
       <Pagination
         totalcount={totalcount}
