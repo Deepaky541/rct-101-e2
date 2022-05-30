@@ -17,18 +17,18 @@ const AddProduct = ({onSubmit}) => {
    };
 
    const handleSubmit = (e) => {
-     e.preventDefault();
+     console.log(form);
      onSubmit(form);
    };
    const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
-      <Button my={4} onClick={onOpen} data-cy="add-product-button">
+      <Button  onClick={onOpen} data-cy="add-product-button">
         Add product
       </Button>
       <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalBody pb={6}>
+        <ModalBody >
           <Input
             data-cy="add-product-title"
             type="text"
@@ -36,7 +36,7 @@ const AddProduct = ({onSubmit}) => {
             placeholder="Title"
             onChange={handleChange}
           />
-          <Select data-cy="add-product-category">
+          <Select data-cy="add-product-category" onChange={handleChange}>
             <option data-cy="add-product-category-shirt" value={"shirt"}>
               shirt
             </option>
@@ -78,7 +78,7 @@ const AddProduct = ({onSubmit}) => {
             name="price"
             onChange={handleChange}
           />
-          <Button data-cy="add-product-submit-button" onclick={handleSubmit}>
+          <Button data-cy="add-product-submit-button" onClick={handleSubmit}>
             submit
           </Button>
         </ModalBody>

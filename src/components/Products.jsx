@@ -58,9 +58,9 @@ const Products = () => {
 
   return (
     <Flex>
-      
+      <div>
       <AddProduct onSubmit={addData} ></AddProduct>
-    
+    </div>
       <Flex margin='500px' >
         {formData.map((todo) => (
           <Product key={todo.id} info={todo} />
