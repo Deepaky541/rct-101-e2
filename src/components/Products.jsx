@@ -56,21 +56,23 @@ const Products = () => {
      }, [fetchh, limitt]);
 
   return (
-    <Flex>
+    <Flex width='100%' justify='space-evenly'>
       <div>
       <AddProduct onSubmit={addData} ></AddProduct>
     </div>
+    <div>
       <Flex margin='500px' >
         {formData.map((todo) => (
           <Product key={todo.id} info={todo} />
         ))}
       </Flex>
-
+</div>
+<div>
       <Pagination
         totalcount={totalcount}
         oncall={fetchpage}
         onlimitt={fetchLimit}
-      />
+      /></div>
     </Flex>
   );
 };

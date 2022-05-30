@@ -53,10 +53,10 @@ const Pagination = ({ totalcount, oncall, onlimitt }) => {
         <option data-cy="pagination-limit-3" value={3}>
           3
         </option>
-        <option data-cy="pagination-limit-6" value={3}>
+        <option data-cy="pagination-limit-6" value={6}>
           6
         </option>
-        <option data-cy="pagination-limit-9" value={3}>
+        <option data-cy="pagination-limit-9" value={9}>
           9
         </option>
       </Select>
